@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <title>String-methods</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+        <a class="navbar-brand" href="#">
+            <img src="maxresdefault.jpg" alt="kmit" width="30" height="24" class="rounded">
+          </a>
+        <a class="navbar-brand text-light" href="index.html">WebTech</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="index.html">Home </a>
+            </li>            <li class="nav-item">
+              <a class="nav-link text-light" href="jsstrings.html">JS Strings</a>            </li>            
+            <li class="nav-item">           <a class="nav-link text-light" href="jsarrays.html">JS Arrays</a>
+            </li>
+          </ul>
+          <div class="navbar-collapse justify-content-end" ></div>
+          <form class="form-inline my-2 my-lg-0 " >
+            <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit"><a href="registration.html">Register Yourself</a></button>
+            <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit"><a href="login.html">Login</a></button>
+          </form>
+        </div>
+      </nav>
+    </header>
+<br>
+    <div class="container border border-primary border-2">
+    <h2 class="text-center">Java Script String Methods</Script></h2>
+    <div class="container" style="width:50%">
+        <div class="row" >
+            <div class="col">
+                <label for="tb1">Enter Text:</label>
+            </div>
+            <div class="col">
+                <textarea name="tb1" id="texttb1" cols="20" rows="2"></textarea>
+                <!-- <input type="text" name="tb1" id="texttb1"> -->
+            </div>
+            <div class="col">
+                <img src="kmit-bar.png" class="rounded float-end img-thumbnail" alt="KMIT-logo" width="100px" height="100px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label for="method">Select a Method:</label>
+            </div>
+            <div class="col">
+                <select name="method" id="sel1">
+                    <option value="0">Select</option>
+                    <option value="1">To Upper Case</option>
+                    <option value="2">To Lower Case</option>
+                    <option value="3">Swap Case</option>
+                    <option value="4">Length</option>
+                    <option value="5">Search</option>
+                    <option value="6">Word Count</option>              
+                    
+                </select>
+            </div>
+            <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">    </div>
+            <div class="col">
+                <input type="button" value="Submit" onclick="myfun()">
+            </div>
+            <div class="col"></div>
+        </div>
+        <br>
+            <div class="row" id="search1">
+                <div class="col">
+                    <label class="search1">Enter Text to search</label>
+                </div>
+                <div class="col">
+                    <input class="search1" type="text" name="" id="sbox">
+                </div>
+                <div class="col"></div>
+            </div>
+        <br>
+        <div class="row">
+            <div class="col"> <label for="">Result: </label>   </div>
+            <div class="col">
+                <textarea name="tarea" id="tarea1" cols="20" rows="5"></textarea>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
+    <script>
+        function myfun()
+        {
+         let x=document.getElementById("texttb1").value;
+         let a=document.getElementById("sel1").value;
+        //  alert(x+a);
+         if(a=='1'){
+            document.getElementById("tarea1").innerHTML=x.toUpperCase();           
+         }
+         if(a=='2'){
+            document.getElementById("tarea1").innerHTML=x.toLowerCase();           
+         }
+         if(a=='3'){
+            let name=x;
+            let swapc="";
+            for(let i=0;i<name.length;i++)
+            {   
+            if (x.charAt(i) >='A' && x.charAt(i) <= 'Z')
+                swapc=swapc+name.charAt(i).toLowerCase();
+            else if(name.charAt(i) >='a' && name.charAt(i) <= 'z')
+                swapc=swapc+name.charAt(i).toUpperCase();
+            } 
+            document.getElementById("tarea1").innerHTML=swapc;
+
+         }
+         if(a=='4'){
+            document.getElementById("tarea1").innerHTML=x.length;           
+         }
+         if(a=='5'){
+            let sub=x.indexOf(document.getElementById("sbox").value);
+            if(sub>=0){
+            document.getElementById("tarea1").innerHTML="Search Element is Available.!";         }
+        else    {  document.getElementById("tarea1").innerHTML="Search Element is Not Available.!";  }                       
+         }
+         if(a=='6'){
+           const arr=x.split(" ").length;
+           document.getElementById("tarea1").innerHTML="Word Count is: "+(arr);
+         }
+        }
+    </script>
+</body>
+</html>

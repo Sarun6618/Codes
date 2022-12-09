@@ -1,0 +1,118 @@
+/*
+Given a container with N+1 balls with a number printed on them.
+Numbers are between 0 to N, there is no repetition of numbers.
+
+A ball is missed from the container.
+Your task is to findout the ball, and return the number printed on it.
+
+Input Format:
+-------------
+Line-1: An integer N.
+Line-2: N space separated integers, numbers[].
+
+Output Format:
+--------------
+An integer, print the number on the missing ball.
+
+
+Sample Input-1:
+----------------
+4
+3 0 1 4
+
+Sample Output-1:
+------------------
+2
+
+
+Sample Input-2:
+----------------
+6
+3 0 1 4 5 2
+
+Sample Output-2:
+------------------
+6
+
+
+=== testcases ===
+case =1
+input =4
+3 0 1 4
+output =2
+
+case =2
+input =9
+3 7 6 2 5 4 9 1 0 
+output =8
+
+case =3
+input =15
+3 7 6 11 2 5 8 10 4 9 1 0 12 13 15
+output =14
+
+case =4
+input =20
+4 9 16 17 3 7 6 8 10 18 1 0 12 14 15 11 2 5 19 20
+output =13
+
+case =5
+input =25
+4 9 16 21 13 17 3 7 6 8 10 18 22 1 0 12 14 24 15 11 2 25 5 19 20
+output =23
+
+case =6
+input =25
+4 9 16 21 13 17 3 2 6 8 10 18 22 1 0 12 14 24 15 11 23 25 5 19 20
+output =7
+
+case =7
+input =30
+4 9 16 21 13 28 7 29 17 3 2 6 8 10 26 27 18 22 1 0 14 24 15 30 11 23 25 5 19 20
+output =12
+
+case =8
+input =30
+4 9 16 13 28 7 29 17 12 3 2 6 8 10 26 27 18 22 1 0 14 24 15 30 11 23 25 5 19 20
+output =21
+
+
+*/
+
+import java.util.*;
+
+class MissingNumber {	
+	
+	//bit manipulation
+	public static int missingNumber(int[] nums) {
+		int xor = 0, i = 0;
+		for (i = 0; i < nums.length; i++) {
+			xor = xor ^ i ^ nums[i];
+		}
+
+		return xor ^ i;
+	}
+	/*
+	//Sum Method
+	public int missingNumber(int[] nums) { //sum
+		int len = nums.length;
+		int sum = (0+len)*(len+1)/2;
+		for(int i=0; i<len; i++)
+			sum-=nums[i];
+		return sum;
+	}
+	
+	*/
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int array[]=new int[n];
+
+		for(int i=0;i<n;i++)
+			array[i]=sc.nextInt();
+
+		System.out.println(  missingNumber(array)  );
+	}
+}

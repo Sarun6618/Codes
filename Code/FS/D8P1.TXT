@@ -1,0 +1,110 @@
+/*
+Bablu is playing a word puzzle game.
+Initially, puzzle conatins a word S, you need to form another word 'T' using 'S'.
+
+The game rules are as follows:
+	1. You can jumble the letters in the given word as your need.
+	2. You can add only one letter to the jumbled word at any position.
+	
+You are given two words, S and T.
+Your  task is to find and print the newly added character to S to form T.
+
+
+Input Format:
+-------------
+Two space separated Strings S and T.
+ 
+Output Format:
+--------------
+Print a character, added to S.
+
+
+Sample Input-1:
+---------------
+ram marg
+
+Sample Output-1:
+----------------
+g
+
+
+Sample Input-2:
+---------------
+av ava
+
+Sample Output-2:
+----------------
+a
+
+
+=== testcases ===
+case =1
+input =ram marg
+output =g
+
+case =2
+input =av ava
+output =a
+
+case =3
+input =compete complete
+output =l
+
+case =4
+input =mission emission
+output =e
+
+case =5
+input =tore tower
+output =w
+
+case =6
+input =mississipi missiissipi
+output =i
+
+case =7
+input =concat contact
+output =t
+
+case =8
+input =hour rough
+output =g
+
+*/
+
+import java.util.*;
+
+class FindTheDifference {
+	public char findTheDifference(String s, String t) {
+		char ch = 0;
+		for (int i = 0; i < s.length(); i += 1) {
+			ch ^= s.charAt(i);
+		}
+		for (int i = 0; i < t.length(); i += 1) {
+			ch ^= t.charAt(i);
+		}
+		return ch;
+	}
+	
+	//Approach:2 Summing up ASCII values
+	/*
+	public char findTheDifference(String s, String t) {
+        int sSum = 0;
+        int tSum = t.charAt(t.length() - 1);
+        for(int i = 0; i < s.length() ; i++){
+            sSum += s.charAt(i);
+            tSum += t.charAt(i);
+        }
+        
+        return (char)(tSum - sSum);
+    }
+	*/
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		String t=sc.next();
+		System.out.println(new FindTheDifference().findTheDifference(s,t));
+	}
+}

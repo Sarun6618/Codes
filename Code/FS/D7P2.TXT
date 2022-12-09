@@ -1,0 +1,88 @@
+/*
+AlphaCipher is a string formed from another string by rearranging its letters
+
+You are given a string S.
+Your task is to check, can any one of the AlphaCipher is a palindrome or not.
+
+Input Format:
+-------------
+A string S
+
+Output Format:
+--------------
+Print a boolean value.
+
+
+Sample Input-1:
+---------------
+carrace
+
+Sample Output-1:
+----------------
+true
+
+
+Sample Input-2:
+---------------
+code
+
+Sample Output-2:
+----------------
+false
+
+
+=== testcases ===
+case =1
+input =carrace
+output =true
+
+case =2
+input =code
+output =false
+
+case =3
+input =geeksgeeks
+output =true
+
+case =4
+input =leetcode
+output =false
+
+case =5
+input =redismurderrum
+output =false
+
+case =6
+input =redmurdersrum
+output =true
+
+case =7
+input =caniseebeesinaevacave
+output =true
+
+case =8
+input =evacaniseebeesincave
+output =false
+
+*/
+
+import java.util.*;
+
+public class PalindromePermutation {
+    public boolean canPermutePalindrome(String s) {
+        Set < Character > set = new HashSet < > ();
+        for (int i = 0; i < s.length(); i++) {
+            if (!set.add(s.charAt(i)))
+                set.remove(s.charAt(i));
+        }
+        return set.size() <= 1;
+    }
+    
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		System.out.println(new PalindromePermutation().canPermutePalindrome(s));
+	}
+}
+

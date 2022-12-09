@@ -1,0 +1,105 @@
+/*
+You are given a string S, consist of both lowercase and uppercase alphabets.
+Your task is to find out the length of the longest word W with the 
+following properties:
+	- The word should be the longest.
+	- The word can be formed with letters of S, and you can shuffle the letters 
+	as your need. You cannot use the letters more than their occurence count.
+	- The word should be equal to the reverse of it.
+	
+NOTE: Alphabets are case sensitive
+"Aa" is  not equal to "aA". The letters 'a' and 'A' are not same
+
+Input Format:
+-------------
+A string S, consist of lower/uppercase letters
+
+Output Format:
+--------------
+Print an integer, length of longest word W.
+
+
+Sample Input-1:
+---------------
+abccccdd
+
+Sample Output-1:
+----------------
+7
+
+Explanation:
+------------
+One of the longest word can be formed is "ccdadcc", with length 7.
+
+
+Sample Input-2:
+---------------
+AIbohPhObia
+
+Sample Output-2:
+----------------
+5
+
+Explanation:
+------------
+One of the longest word can be formed is "bhPhb", with length 5.
+
+
+=== testcases ===
+case =1
+input =abccccdd
+output =7
+
+case =2
+input =AIbohPhObia
+output =5
+
+case =3
+input =abccccddAIbohPhObia
+output =13
+
+case =4
+input =pneumonoultramicroscopicsilicovolcanoconiosis
+output =41
+
+case =5
+input =hippopotomonstrosesquippedaliophobia 
+output =27
+
+case =6
+input =supercalifragilisticexpialidocious 
+output =25
+
+case =7
+input =floccinaucinIhiliPilification 
+output =23
+
+case =8
+input =floccinaucinihilipilificationhippopotomonstrosesquippedaliophobia
+output =55
+
+*/
+
+import java.util.*;
+
+class LongestPalindrome {
+    public int longestPalindrome(String s) {
+        int[] count = new int[128];
+        for (char c: s.toCharArray())
+            count[c]++;
+
+        int ans = 0;
+        for (int v: count) {
+            ans += v / 2 * 2;
+            if (ans % 2 == 0 && v % 2 == 1)
+                ans++;
+        }
+        return ans;
+    }
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		System.out.println(new LongestPalindrome().longestPalindrome(s));
+	}
+}

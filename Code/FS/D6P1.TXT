@@ -1,0 +1,111 @@
+/*
+You are given a 32-bit signed integer N. Your task is to reverse 
+the binary representation of N and print its decimal equivalent as integer. 
+
+Input Format:
+-------------
+An integer, signed integer.
+
+Output Format:
+--------------
+Print an integer output.
+
+
+Sample Input-1:
+---------------
+1420227820
+
+Sample Output-1:
+----------------
+925852970
+
+Explanation:
+------------
+The given integer is 1420227820
+binary representation is 01010100101001101111010011101100
+
+Reverse binary representation is 00110111001011110110010100101010
+so return 925852970.
+
+
+Sample Input-2:
+---------------
+2132772745
+
+Sample Output-2:
+----------------
+-1847461634
+
+Explanation:
+------------
+The given integer is 2132772745
+binary representation is 01111111000111111000011110001001, 
+
+Reverse binary representation is 10010001111000011111100011111110
+so return -1847461634.
+
+
+=== testcases ===
+case =1
+input =8765677
+output =-1224498944
+
+case =2
+input =2132772745
+output =-1847461634
+
+case =3
+input =1420227820
+output =925852970
+
+case =4
+input =925852970
+output =1420227820
+
+case =5
+input =-1847461634
+output =2132772745
+
+case =6
+input =43261596
+output =964176192
+
+case =7
+input =964176192
+output =43261596
+
+case =8
+input =-1224498944
+output =8765677
+
+case =9
+input =967638619
+output =-629197412
+
+case =10
+input =-629197412
+output =967638619
+
+*/
+
+import java.util.*;
+class ReverseBits {
+    // you need treat n as an unsigned value
+	public int reverseBits(int n) {
+		int result = 0;
+		for (int i = 0; i < 32; i++) {
+			result += n & 1;
+			n >>>= 1;   // CATCH: must do unsigned shift
+			if (i < 31) // CATCH: for last digit, don't shift!
+				result <<= 1;
+		}
+		return result;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		System.out.println(new ReverseBits().reverseBits(num));
+	}
+}

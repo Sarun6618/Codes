@@ -1,0 +1,160 @@
+/*
+MotorSport Ltd hosting a Racing Championship. Mr. Ajith is participating 
+in car races. Each race start and end in perticular time intervals.
+
+You are given an array of racing time intervals consisting of
+start and end times [[s1,e1],[s2,e2],...] (s < e ) of N races, in which 
+Ajith has to participate. Your task is to determine whether Ajith can 
+in all the races or not.
+
+NOTE: If a race starts at time 'a' ends at time 'b', 
+another race can start at 'b'.
+
+Input Format:
+-------------
+Line-1: An integer N, number of races Ajith has to participate.
+Next N lines: Two space separated integers, start and end time of each race.
+
+Output Format:
+--------------
+Print a boolean value.
+
+
+Sample Input-1:
+---------------
+3
+0 30
+5 10
+15 20
+
+Sample Output-1:
+----------------
+false
+
+Sample Input-2:
+---------------
+3
+0 10
+15 25
+30 35
+
+Sample Output-2:
+----------------
+true
+
+
+
+=== testcases ===
+case =1
+input =3
+0 10
+15 25
+30 35
+output =true
+
+case =2
+input =3
+0 30
+5 10
+15 20
+output =false
+
+case =3
+input =4
+1 10
+10 20
+20 30
+30 40
+output =true
+
+case =4
+input =5
+1 10
+15 25
+30 45
+25 35
+45 50
+output =false
+
+case =5
+input =8
+1 10
+10 20
+20 30
+30 40
+41 50
+51 60
+61 70
+70 80
+output =true
+
+case =6
+input =8
+1 10
+10 21
+30 40
+41 50
+51 60
+20 30
+60 70
+70 80
+output =false
+
+case =7
+input =10
+1 10
+15 25
+30 40
+45 60
+11 15
+61 70
+41 50
+75 90
+80 95
+91 100
+output =false
+
+case =8
+input =10
+1 10
+15 25
+30 40
+45 60
+11 15
+61 70
+41 45
+75 90
+91 100
+25 30
+output =true
+
+*/
+import java.util.*;
+
+class Racing {
+	public boolean canParticipateInAll(int[][] intervals) {
+		Arrays.sort(intervals, new Comparator<int[]>() {
+		  public int compare(int[] i1, int[] i2) {
+			return i1[0] - i2[0];
+		  }
+		});
+
+		for (int i = 0; i < intervals.length - 1; i++) {
+		  if (intervals[i][1] > intervals[i + 1][0])
+			return false;
+		}
+		return true;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int intervals[][]=new int[n][2];
+		for(int i=0;i<n;i++){
+			intervals[i][0]=sc.nextInt();
+			intervals[i][1]=sc.nextInt();
+		}
+		System.out.println(new Racing().canParticipateInAll(intervals));
+	}
+}

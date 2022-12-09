@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <title>JS-array</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+            <a class="navbar-brand" href="#">
+                <img src="maxresdefault.jpg" alt="kmit" width="30" height="24" class="rounded">
+              </a>
+            <a class="navbar-brand text-light" href="index.html">WebTech</a>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html">Home </a>
+                </li>            <li class="nav-item">
+                  <a class="nav-link text-light" href="jsstrings.html">JS Strings</a>            </li>            
+                <li class="nav-item">           <a class="nav-link text-light" href="jsarrays.html">JS Arrays</a>
+                </li>
+              </ul>
+              <div class="navbar-collapse justify-content-end" ></div>
+              <form class="form-inline my-2 my-lg-0 " >
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit"><a href="registration.html">Register Yourself</a></button>
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit"><a href="login.html">Login</a></button>
+              </form>
+            </div>
+          </nav>
+        </header>
+        <br>
+    <div class="container border border-primary border-2">
+        
+        <h3 class="text-center ">JavaScript Arrays </h3>
+        <div class="row ">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label for="">Enter array elements as , separated String:</label>
+            </div>
+            <div class="col-3">
+                <textarea name="" id="input" cols="30" rows="2"></textarea>
+            </div>
+            <div class="col-3">
+                <img src="kmit-bar.png" class="rounded float-end img-thumbnail" alt="KMIT-logo" width="100px" height="100px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label for=""> Select a Method:</label>
+            </div>
+            <div class="col-3">
+                <select name="" id="selectm">
+                    <option value="0">Select</option>
+                    <option value="1">pop</option>
+                    <option value="2">push</option>
+                    <option value="3">shift</option>
+                    <option value="4">unshift</option>
+                    <option value="5">length</option>
+                    <option value="6">slice</option>                    
+                    <option value="7">most Frequent</option>
+                    <option value="8">least Frequent</option>
+                    <option value="9">Remove Duplicates</option>
+                    <option value="10">Binary Search</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label for="">Array Element or index:</label>
+            </div>
+            <div class="col-3"><input type="text" name="" id="element1"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-3">
+                <input class="btn btn-info" type="submit" value="Submit" onclick="myfun()">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label for="">Output:</label>
+            </div>
+            <div class="col-3">
+                <textarea name="" id="output" cols="40" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+            function myfun()
+            {
+                let ip= document.getElementById("input").value;
+                let sel= document.getElementById("selectm").value;
+                let arr=ip.split(",");
+                if(sel=='1'){
+                    arr.pop();
+                    document.getElementById("output").innerHTML=arr;
+                }
+                if(sel=='2'){
+                    let ele=document.getElementById("element1").value;
+                    arr.push(ele);                    
+                    document.getElementById("output").innerHTML=arr;
+                }
+                if(sel=='3'){
+                    arr.shift();                    
+                    document.getElementById("output").innerHTML=arr;
+                }
+                if(sel=='4'){
+                    let ele=document.getElementById("element1").value;
+                    arr.unshift(ele);                    
+                    document.getElementById("output").innerHTML=arr;
+                }
+                if(sel=='5'){                    
+                    document.getElementById("output").innerHTML="Array Length: "+arr.length;
+                }
+                if(sel=='6'){  
+                    let narr=arr.slice(document.getElementById("element1").value)                  
+                    document.getElementById("output").innerHTML="Sliced Array: "+narr;
+                }
+                if(sel=='7'){                     
+                    let mf = 1;
+                    let m = 0;
+                    let arr1=arr;
+                    let item;
+                        for (var i=0; i<arr1.length-1; i++)
+                        {
+                        for (var j=i; j<arr1.length; j++)
+                        {
+                                if (arr1[i] == arr1[j])
+                                 m++;
+                                if (mf<m)
+                                {
+                                  mf=m; 
+                                  item = arr1[i];
+                                }
+                        }
+                            m=0;
+                        }
+
+                                     
+                    document.getElementById("output").innerHTML="Most Frequent Item: "+item;
+                }
+                if(sel=='8'){                  
+                                 
+                    const leastFrequent = (arr) => {
+                    //Store the number counts in object
+                    const count = arr.reduce((a, b) => {
+                        if (!a[b]) {
+                        a[b] = 1;
+                        } else {
+                        a[b]++;
+                        }
+                    
+                        return a;
+                    }, {});
+                
+        
+                    let minCount = Number.MAX_SAFE_INTEGER;
+                    let numberWithLeastCount = 0;
+
+                    //Find the number with least count
+                    for (const [key, value] of Object.entries(count)) {
+                        if (value < minCount) {
+                        minCount = value;
+                        numberWithLeastCount = key;
+                        }
+                    }
+
+                    return numberWithLeastCount;
+                }
+                document.getElementById("output").innerHTML="Least Frequent Item: "+leastFrequent(arr); 
+             }
+              if(sel=='9') {
+                function removeDuplicates(num) {    
+                len=num.length;
+                uniqueChars=[];        
+                    num.forEach((c) => {
+                        if (!uniqueChars.includes(c)) {
+                        uniqueChars.push(c);
+                        }
+                    });
+                return uniqueChars;
+                }
+                document.getElementById("output").innerHTML="Unique Elements of Array: "+removeDuplicates(arr);
+              } 
+              if(sel=='10') {
+                let iterativeFunction = function (arr, x) {  
+                let start=0, end=arr.length-1;    
+                while (start<=end){         
+                    let mid=Math.floor((start + end)/2);  
+                    if (arr[mid]===x) return true; 
+                    else if (arr[mid] < x)
+                         start = mid + 1;
+                    else
+                         end = mid - 1;
+                    }
+  
+                    return false;
+                }
+                let ele=document.getElementById("element1").value;
+                document.getElementById("output").innerHTML="Element exists? Ans: "+iterativeFunction(arr,ele);
+              } 
+            }
+    </script>
+    
+</body>
+</html>

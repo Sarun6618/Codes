@@ -1,0 +1,14 @@
+div{
+    width :40%;
+    height: 250px;
+    background-color:cadetblue;
+    float: left;
+    display: inline-block;
+}
+.div1{
+    width:40%;
+    height: 250px;
+    background-color:cornflowerblue;
+    float: right;
+    display: inline-block;
+}

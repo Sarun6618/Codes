@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+     <title>Registration page</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+          <a class="navbar-brand" href="#">
+            <img src="maxresdefault.jpg" alt="kmit" width="30" height="24" class="rounded">
+          </a>
+            <a class="navbar-brand text-light" href="index.html">WebTech</a>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html">Home </a>
+                </li>            <li class="nav-item">
+                  <a class="nav-link text-light" href="jsstrings.html">JS Strings</a>            </li>            
+                <li class="nav-item">           <a class="nav-link text-light" href="jsarrays.html">JS Arrays</a>
+                </li>
+              </ul>
+              <div class="navbar-collapse justify-content-end" ></div>
+              <form class="form-inline my-2 my-lg-0 " >
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit" href="registration.html">Register Yourself</button>
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light " type="submit"><a href="login.html">Login</a></button>
+              </form>
+            </div>
+          </nav>
+    </header>
+ 
+ <form action="post" class="form-control">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 >Student Registration form</h3> 
+    <label class="form-label" for="sname">Student Name:</label>
+    <input class="form-control" type="text" name="sname">
+    <label class="form-label" for="sno">Student No:</label>
+    <input class="form-control" type="text" name="sno"><br>
+    <label class="form-label" for="semail">Email:</label>
+    <input class="form-control" type="email">  <br>
+    <label class="form-label" for="sdob">DOB:</label>
+    <input class="form-control" type="date" name="sdob"><br>
+    <label class="form-label" for="gender">Gender</label>
+    <input class="" type="radio" name="gender"> Male
+    <input class="" type="radio" name="gender"> Female<br>
+    <br>
+    <label for="studies">Studies</label>
+    <input type="checkbox" name="studies" id="">SSC
+    <input type="checkbox" name="studies" id="">CBSE
+    <input type="checkbox" name="studies" id="">Diploma
+    <input type="checkbox" name="studies" id="">Inter
+    <br><br>
+
+    <label for="state">State:</label>
+    <select name="state" id="">
+        <option value="1">Select</option>
+        <option value="2">TS</option>
+        <option value="3">AP</option>
+    </select><br><br>
+
+    <label for="feedback">Feedback:</label><br>
+    <textarea name="feedback" id="" cols="30" rows=""></textarea><br><br>
+    <input type="submit" value="Submit">
+</div>
+<div class="col"></div>
+</div>
+ </form>  
+</body>
+</html>
