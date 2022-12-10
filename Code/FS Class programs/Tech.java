@@ -8,11 +8,10 @@ class Tech
       System.out.print("Enter an integer number:: ");
       int n = s.nextInt();
       s.close();
-      int x=n,r,ct = 0,fh = 0,lh = 0,sum = 0;
+      int x=n,ct = 0,fh = 0,lh = 0,sum = 0;
       // count number of digits
       while(n>0)
       {
-          r=n%10;
           ct++;
           n/=10;
       }
