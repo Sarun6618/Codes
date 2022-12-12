@@ -1,3 +1,6 @@
+/*
+Ramu was given the task of working with numbers. He will be given a number and he has to replace the number with its equivalent number. For example if he is given a number 123 he should give the output as 876. help him in writing the code
+*/
 import java.util.*;
 class NewNumber
 {
