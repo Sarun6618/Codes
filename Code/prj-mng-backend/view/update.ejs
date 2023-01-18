@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Desktop Portal</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/register">Add new Desktop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/search">Search for an Desktop </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/update">Update Desktop details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <br><br><br>
+    <h3 style="text-align: center;">Welcome to the Express mongo connection Portal </h3>
+
+    <form action="/Desktop/update" method="POST">
+        <input type="text" placeholder="C Name to be update" id="cname" name="cname"> <br><br>
+        <input type="text" placeholder="Desktop Name" id="cnamenew" name="cnamenew"> <br><br>
+        <input type="email" placeholder="Email" id="email" name="email"> <br><br>
+        <input type="text" placeholder="Phone" id="phone" name="phone" maxlength="10"> <br><br>
+        <input type="text" placeholder="Desktop City" id="city" name="city"> <br><br>
+        <button type="submit" >Update</button>
+    </form>
+    <h1> <%= status %> </h1>
+</body>
+</html>

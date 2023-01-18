@@ -1,0 +1,74 @@
+<!--<html>
+    <head>
+        <title>Desktop Portal</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/register">Add new Desktop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/search">Search for an Desktop </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page/update">Update Desktop details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <br><br><br>
+    <h3 style="text-align: center;">Welcome to the Express mongo connection Portal </h3>
+
+    <form action="/Desktop/register" method="POST">
+      <label for="Make">Desktop name:</label>
+        <input type="text" placeholder="Name" id="Make" name="Make"> <br><br>
+        <label for="model">Desktop model:</label>
+        <input type="text" placeholder="model" id="model" name="model"> <br><br>
+        <label for="TagID">TagID:</label>
+        <input type="text" placeholder="TagID" id="TagID" name="TagID"> <br><br>
+        <label for="SerialNumber">Desktop SerialNumber:</label>
+        <input type="text" placeholder="SerialNumber" id="SerialNumber" name="SerialNumber" minlength="10" maxlength="10"> <br><br>
+        <label for="Processor">Desktop Processor:</label>
+        <input type="text" placeholder="Processor" id="Processor" name="Processor"> <br><br>
+        <label for="Generation">Generation:</label>
+        <input type="text" placeholder="Generation" id="Processor"> <br><br>
+        <label for="RAM">RAM:</label>
+        <input type="text" placeholder="RAM" id="RAM" name="RAM"> <br><br>
+        <label for="Storage">Storage:</label>
+        <input type="text" placeholder="Storage" id="Storage" name="Storage"> <br><br>
+        <label for="Graphics">Graphics:</label>
+        <input type="text" placeholder="Graphics" id="Graphics" name="Graphics"> <br><br>
+        <label for="User">User:</label>
+        <input type="text" placeholder="User" id="User" name="User"> <br><br>
+        <label for="Status">Status:</label>
+        <input type="text" placeholder="Status" id="Status" name="Status"> <br><br>
+        <label for="Remarks">Remarks:</label>
+        <input type="text" placeholder="Remarks" id="Remarks" name="Remarks"> <br><br>
+        <button type="submit" >submit</button>
+    </form>
+    <h1> <%= status %> </h1>
+</body>
+</html>
+-->

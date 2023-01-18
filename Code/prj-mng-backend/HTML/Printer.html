@@ -1,0 +1,93 @@
+<html>
+<body>
+<h1 style="text-align: center"> PRINTER AUDIT </h1>
+<form>
+	<table border=1 width="50%" height="600px" align="center" bgcolor="DodgerBlue">
+	 <tr>
+	  <td>
+	   <label for="Make">Make:</label>
+	  </td>
+	  <td>
+	   <select name="Make" id="Make">
+	   <option value="Dell">Dell</option>
+         <option value="Lenovo">Lenovo</option>
+         <option value="HP">HP</option>
+         <option value="ASUS">ASUS</option>
+         <option value="Apple">Apple</option>
+         <option value="Other">Other</option>
+         </select>
+         <br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Model:</label>
+	  </td>
+	  <td>
+	   <input type="text"><br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Desktop/INKJET:</label>
+	  </td>
+	  <td>
+	   <input type="text"><br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Tag ID:</label>
+	  </td>
+	  <td>
+	   <input type="text"> <br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Serial Number:</label>
+	  </td>
+	  <td>
+	   <input type="text"> <br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>User:</label>
+	  </td>
+	  <td>
+	   <input type="text"> <br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Status:</label><br>
+	  </td>
+	  <td>
+	   <input type="radio" name="status" value="Working">Working<br>
+	   <input type="radio" name="status" value="Not Working">Not Working<br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <label>Remarks:</label>
+	  </td>
+	  <td>
+	   <input type="text"> <br>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	   <input type="submit" value="Submit" onclick="msg()">
+	  </td>
+	 </tr>
+	</table>	 
+</form>
+<script>
+function msg(){
+alert("Your response is submitted");
+}
+</script>
+</body>
+</html>
+
